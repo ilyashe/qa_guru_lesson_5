@@ -1,8 +1,12 @@
 import os
 from selene import browser, have, command
+from selenium import webdriver
 
 
 def test_complete_and_submit_form():
+    driver_options = webdriver.ChromeOptions()
+    driver_options.page_load_strategy = 'eager'  # вместо этой строки можно добавить другие опции
+    browser.config.driver_options = driver_options
     browser.open('https://demoqa.com/automation-practice-form')
     browser.element('#firstName').type('Fedor')
     browser.element('#lastName').type('Bubnov')
