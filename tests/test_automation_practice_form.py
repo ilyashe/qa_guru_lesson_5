@@ -4,6 +4,8 @@ from selene import browser, have, command
 
 def test_complete_and_submit_form():
 
+    browser.open('/automation-practice-form')
+
     browser.element('#firstName').type('Fedor')
     browser.element('#lastName').type('Bubnov')
     browser.element('#userEmail').type('fedor.bubnov_test@gmail.com')
